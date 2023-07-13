@@ -14,12 +14,12 @@ class HomePageControlller extends Controller
     }
 
     public function submit_form(Request $req) {
-        // $var = new ContactForm;
-        // $var->name = $req->name;
-        // $var->email = $req->email;
-        // $var->phone = $req->phone;
-        // $var->msg = $req->msg;
-        // $var->save();
+        $var = new ContactForm;
+        $var->name = $req->name;
+        $var->email = $req->email;
+        $var->phone = $req->phone;
+        $var->msg = $req->msg;
+        $var->save();
 
         // ContactForm::create(
         //     [
@@ -29,15 +29,17 @@ class HomePageControlller extends Controller
         //         'msg'=> $req->msg,
         //     ],
         // );
-        DB::table('contact_forms')
-        ->insert(
-            [
-                'name'=> $req->name,
-                'email'=> $req->email,
-                'phone'=> $req->phone,
-                'msg'=> $req->msg,
-            ],
-        );
+        // DB::table('contact_forms')
+        // ->insert(
+        //     [
+        //         'name'=> $req->name,
+        //         'email'=> $req->email,
+        //         'phone'=> $req->phone,
+        //         'msg'=> $req->msg,
+        //     ],
+        // );
+
+       
         
     }
 }

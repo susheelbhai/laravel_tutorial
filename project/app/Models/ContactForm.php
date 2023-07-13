@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class ContactForm extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'email', 'phone', 'msg'];
+    // protected $fillable = ['name', 'email', 'phone'];
+    protected $guarded = ['msg'];
 }
