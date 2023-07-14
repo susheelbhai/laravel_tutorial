@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ContactForm;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -10,7 +11,8 @@ class HomePageControlller extends Controller
 {
         public $logo;
    public function index() {
-        return view('welcome');
+        $data = Product::all();
+        return view('welcome', compact('data'));
     }
 
     public function submit_form(Request $req) {
