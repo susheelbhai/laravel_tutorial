@@ -9,13 +9,18 @@ use Illuminate\Support\Facades\DB;
 
 class HomePageControlller extends Controller
 {
-        public $logo;
-   public function index() {
-        $data = Product::all();
+    public $logo;
+    public function index()
+    {
+    //    return $data = Product::all();
+        // return $data = Product::where('id', 4)->get();
+        $data = Product::paginate(12);
+
         return view('welcome', compact('data'));
     }
 
-    public function submit_form(Request $req) {
+    public function submit_form(Request $req)
+    {
         $var = new ContactForm;
         $var->name = $req->name;
         $var->email = $req->email;
@@ -41,8 +46,8 @@ class HomePageControlller extends Controller
         //     ],
         // );
 
-       
-        
+
+
     }
 }
 
