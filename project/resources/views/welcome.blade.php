@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    {{-- <form action="{{ route('submit_form') }}" method="post">
+    <form action="#" method="post">
         @csrf
         <label for="">Name</label> <br>
         <input type="text" name="name" id=""> <br>
@@ -24,24 +24,13 @@
         <label for="">Message</label> <br>
         <input type="text" name="msg" id=""> <br>
         <button>Submit</button>
-    </form> --}}
+    </form>
     <div class="container my-5">
         <div class="row">
-            @foreach ($data as $item)
-                <div class="col col-3">
-                    <div class="card" style="">
-                        <img src="{{ url($item->photo) }}" class="card-img-top" alt="..." width="120" height="120" >
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $item->name }}</h5>
-
-                        </div>
-                    </div>
-                </div>
-            @endforeach
+            
         </div>
         <div class="row">
             <div class="col">
-                {{ $data->links() }}
             </div>
         </div>
     </div>
