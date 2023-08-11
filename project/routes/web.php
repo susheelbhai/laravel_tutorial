@@ -7,6 +7,7 @@ use App\Http\Controllers\VoteController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubCategoryController;
+use App\Http\Controllers\User\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,9 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 Route::get('/vote', [VoteController::class, 'index'])->middleware('vote')->name('vote');
-Route::get('/about', [BlogController::class, 'about'])->name('about');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::post('/contact', [HomeController::class, 'submit_contact']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
